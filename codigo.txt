@@ -1,0 +1,38 @@
+package teste;
+public class Testando {
+   public static void quickSort(int v[], int esquerda, int direita) {
+int es=esquerda;
+int di=direita;
+int pivo= v[(es+di)/2];
+int troca;
+while (es<= di){
+while (v[es]<pivo) {
+es=es+1;
+}
+while (v[di] >pivo){
+di=di-1;
+}
+if (es <=di) {
+troca = v[es];
+v[es]= v[di];
+v[di]= troca;
+es=es+1;
+di=di-1;
+}
+}
+
+if (di>esquerda)
+quickSort(v, esquerda, di);
+if (es< direita)
+quickSort(v, es, direita);
+}
+public static void main (String args[]){
+int vet[]={9 , 10 , -1, 3, 6, 2, -3, 1, 0, -2, 15, 8, -7, 0 };
+quickSort (vet, 0, vet.length -1);
+for (int i= 0; i<vet.length;i++){
+System.out.println(""+ vet[i]);
+}
+}
+}
+
+
